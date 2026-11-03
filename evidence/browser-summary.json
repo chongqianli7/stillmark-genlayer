@@ -1,0 +1,59 @@
+{
+  "network": 61999,
+  "address": "0xc4b68c5c24a96Eca51FB43E981ccA27d88A50EcA",
+  "owner": "0x256a79daaf77441a72a5b255836c7733db29633d",
+  "id": "browser-lamp-204",
+  "record": {
+    "after": "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: brass with a new visible dent at the midpoint. Base: the same shallow underside scratch; stable on a flat surface.",
+    "approvals": [
+      "0x0e96004fe15aeb15626b299455cb4244fc97f422",
+      "0x256a79daaf77441a72a5b255836c7733db29633d"
+    ],
+    "before": "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: straight brass, no dents. Base: one pre-existing shallow scratch on the underside; stable on a flat surface.",
+    "declined_by": "",
+    "digest": "8f7efff0df90d927627ecb3584d7ed2ca9438e397350d4a0a274545fdf06d982",
+    "id": "browser-lamp-204",
+    "item": "Cedar reading lamp \u00b7 tag CL-204",
+    "owner": "0x256a79daaf77441a72a5b255836c7733db29633d",
+    "parts": [
+      "Shade",
+      "Stem",
+      "Base"
+    ],
+    "protocol": "stillmark-1",
+    "receiver": "0x0e96004fe15aeb15626b299455cb4244fc97f422",
+    "result": {
+      "findings": [
+        {
+          "after_quote": "Shade: cream linen, no tears or stains.",
+          "before_quote": "Shade: cream linen, no tears or stains.",
+          "label": "UNCHANGED",
+          "part": "Shade"
+        },
+        {
+          "after_quote": "Stem: brass with a new visible dent at the midpoint.",
+          "before_quote": "Stem: straight brass, no dents.",
+          "label": "NEW_DAMAGE",
+          "part": "Stem"
+        },
+        {
+          "after_quote": "Base: the same shallow underside scratch; stable on a flat surface.",
+          "before_quote": "Base: one pre-existing shallow scratch on the underside; stable on a flat surface.",
+          "label": "UNCHANGED",
+          "part": "Base"
+        }
+      ],
+      "identity": "SAME"
+    },
+    "status": "ACKNOWLEDGED"
+  },
+  "finalAcknowledgementHash": "0x33e750afb7e969b5e0718913aa3a7514a2d3053bf7f221b7993350a0c5e8b0cb",
+  "browserObservedStages": [
+    "dispatch finalized and read back",
+    "receive finalized and read back",
+    "compare finalized and read back",
+    "receiver acknowledgement finalized and read back",
+    "owner acknowledgement finalized and read back"
+  ],
+  "receiptCoverage": "Browser export contains the final acknowledgement receipt and final record; preceding stages were observed in UI, not exported as separate receipts. All test accounts are controlled by one operator."
+}

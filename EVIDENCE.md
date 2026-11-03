@@ -29,3 +29,11 @@ Incomplete record: `REVIEW`; the uninspected stem is `UNCLEAR`. Acknowledgement 
 Offline validation: 14 mocked-host contract tests, 3 JavaScript helper tests and a production build passed. These checks do not prove remote model accuracy or prompt-injection immunity. Browser practice and finalized public-record readback were exercised separately.
 
 Raw receipts use lossless gzip compression. Inspect with `gzip -dc evidence/studionet.json.gz`.
+
+## Browser workflow
+
+A separate handover (`browser-lamp-204`, owner `0x256a79daaf77441a72a5b255836c7733db29633d`) completed through the actual website interface: dispatch, receiver note, GenLayer comparison and both exact-digest acknowledgements. Every stage displayed finalized successful execution and matching readback. The final state is ACKNOWLEDGED. Two temporary browser signers were controlled by one operator.
+
+[Browser record and stage coverage](evidence/browser-summary.json) · [Raw final browser export](evidence/browser-export.json.gz) · [Final acknowledgement transaction](https://explorer-studio.genlayer.com/tx/0x33e750afb7e969b5e0718913aa3a7514a2d3053bf7f221b7993350a0c5e8b0cb). The export includes the final receipt, not separate raw receipts for the four preceding browser stages.
+
+Production GitHub Pages was opened successfully and independently read the original ACKNOWLEDGED example from the live RPC. GitHub Actions build and deployment succeeded, including dependency installation, all 17 tests and production compilation.
