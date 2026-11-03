@@ -1,0 +1,15 @@
+import {createClient,createAccount,generatePrivateKey,abi} from 'genlayer-js';
+import {studionet} from 'genlayer-js/chains';
+import {sha256,toBytes} from 'viem';
+import source from '../contracts/stillmark.py?raw';
+import {addressOK,success,confirmedFailure} from './util.js';
+export const reader=createClient({chain:studionet});
+export const explorer='https://explorer-studio.genlayer.com';
+export const hash=s=>sha256(toBytes(s)).slice(2);
+export async function verify(address){if(!addressOK(address))throw Error('Contract deployment is not configured.');if(hash(await reader.getContractCode(address))!==hash(source))throw Error('Deployed source mismatch. Writes blocked.');if(await reader.readContract({address,functionName:'get_protocol',args:[],transactionHashVariant:'latest-final'})!=='stillmark-1')throw Error('Wrong protocol.');}
+export async function connect(){const provider=window.okxwallet?.ethereum||window.okxwallet||window.ethereum;if(!provider?.request)throw Error('Use a wallet browser or try a temporary zero-gas session.');const accounts=await provider.request({method:'eth_requestAccounts'});const account=accounts[0]?.toLowerCase();const w={provider,account,client:createClient({chain:studionet,provider,account})};await check(w);return w;}
+export function temporary(){const account=createAccount(generatePrivateKey());return {account:account.address.toLowerCase(),client:createClient({chain:studionet,account}),temporary:true};}
+export async function check(w){if(!w)throw Error('Connect a signer first.');if(w.provider){const [as,id]=await Promise.all([w.provider.request({method:'eth_accounts'}),w.provider.request({method:'eth_chainId'})]);if(as[0]?.toLowerCase()!==w.account||Number(id)!==61999)throw Error('Account or network changed. Reconnect on 61999.');}if(await reader.getChainId()!==61999)throw Error('Wrong RPC chain.');const gas=await reader.request({method:'eth_gasPrice',params:[]});if(BigInt(gas)!==0n)throw Error('Nonzero gas. Submission stopped.');}
+export async function read(address,owner,id){if(!addressOK(owner)||!id)throw Error('Enter the dispatch owner and record ID.');const raw=await reader.readContract({address,functionName:'get_record',args:[owner,id],transactionHashVariant:'latest-final'});if(!raw)throw Error('No finalized record at that reference.');const r=JSON.parse(raw);if(r.protocol!=='stillmark-1'||r.owner!==owner.toLowerCase()||r.id!==id)throw Error('Readback identity mismatch.');return r;}
+export async function receipt(p){const tx=await reader.request({method:'eth_getTransactionByHash',params:[p.hash]});if(!tx)return null;const b64=typeof tx.data?.calldata==='string'?tx.data.calldata:tx.data?.calldata?.base64;if((tx.from_address||'').toLowerCase()!==p.from||(tx.to_address||'').toLowerCase()!==p.address.toLowerCase()||!b64)throw Error('Receipt identity unavailable or mismatched.');const call=abi.calldata.decode(Uint8Array.from(atob(b64),c=>c.charCodeAt(0)));if(!(call instanceof Map)||call.get('method')!==p.method||JSON.stringify(call.get('args')||[])!==JSON.stringify(p.args))throw Error('Receipt intent mismatch.');return tx;}
+export {success,confirmedFailure};

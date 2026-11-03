@@ -1,0 +1,328 @@
+{
+  "protocol": "stillmark-1",
+  "network": 61999,
+  "sourceSha256": "bbf9a61b1abc4feed131e8b6092e5ad5bb4ffb3945f3f7cb32c25481fef2b3fa",
+  "owner": "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+  "receiver": "0x67de01a89b8bc0b1f77afc02edaf81dfd7749fad",
+  "id": "lamp-204",
+  "address": "0xc4b68c5c24a96Eca51FB43E981ccA27d88A50EcA",
+  "fixture": "Authored lamp reports; two distinct zero-balance temporary test accounts controlled by one operator. Not independent people or a real physical inspection.",
+  "transactions": [
+    {
+      "label": "01-deploy",
+      "hash": "0xc54bbccec86ba53933d98dfff6b61577c115fe2e89457b48983e720bc5815375",
+      "method": "deploy",
+      "signer": "0x8f2b08eDcE3609162D8914011C52E59363AbA1E1",
+      "args": [],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "agree"
+      }
+    },
+    {
+      "label": "02-dispatch",
+      "hash": "0x71fe588411bf8e315dc0d86a3fcf5648638221fef221d5a681c6fa12e585437b",
+      "method": "dispatch",
+      "signer": "0x8f2b08eDcE3609162D8914011C52E59363AbA1E1",
+      "args": [
+        "lamp-204",
+        "0x67de01a89b8bc0b1f77afc02edaf81dfd7749fad",
+        "Cedar reading lamp \u00b7 tag CL-204",
+        "[\"Shade\",\"Stem\",\"Base\"]",
+        "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: straight brass, no dents. Base: one pre-existing shallow scratch on the underside; stable on a flat surface."
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "agree",
+        "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "idle",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle"
+      }
+    },
+    {
+      "label": "03-receive",
+      "hash": "0xa3f8a2fe6596a0fd0fa213a1bf72cf77426f11ea34fd00d9aef305db5b597452",
+      "method": "receive",
+      "signer": "0x67DE01a89b8bC0b1F77AFC02EDAf81DFd7749fad",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-204",
+        "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: brass with a new visible dent at the midpoint. Base: the same shallow underside scratch; stable on a flat surface."
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "agree",
+        "0x336458747913FE397be82c4F0926ACeB3ab13618": "idle",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "idle"
+      }
+    },
+    {
+      "label": "04-compare",
+      "hash": "0x59c7db12c73ba5e5782c634be9687a4f8089ae6674f9cb4f9683f9ad48f49e85",
+      "method": "compare",
+      "signer": "0x8f2b08eDcE3609162D8914011C52E59363AbA1E1",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-204"
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "idle",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "idle",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "agree"
+      }
+    },
+    {
+      "label": "05-stale-digest-denied",
+      "hash": "0x88af7caa4218a3907d016f03189e2d43bd1de5c49c233de4b99793867c5e51a6",
+      "method": "acknowledge",
+      "signer": "0x8f2b08eDcE3609162D8914011C52E59363AbA1E1",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-204",
+        "invalid-digest"
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "ERROR",
+      "votes": {
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "idle",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "agree",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "idle",
+        "0xcab45E3fe9cC9592B5C378E47734E022b7Df80c9": "agree"
+      }
+    },
+    {
+      "label": "06-owner-acknowledges",
+      "hash": "0x1e5bc3c153051797c336bb1322d68648fa41e134fa0cdf4cc0f696f1a5d80226",
+      "method": "acknowledge",
+      "signer": "0x8f2b08eDcE3609162D8914011C52E59363AbA1E1",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-204",
+        "170f583bdaa8a5fbdf0383d8ca5fbafb18fc49b64f7172736914fdb4ee347ab9"
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "idle",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "idle"
+      }
+    },
+    {
+      "label": "07-receiver-acknowledges",
+      "hash": "0x8ed63bbc1561c0ac457a81d3aee25fbc3e3c36fdb31eb6a9234e50c162ba07b5",
+      "method": "acknowledge",
+      "signer": "0x67DE01a89b8bC0b1F77AFC02EDAf81DFd7749fad",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-204",
+        "170f583bdaa8a5fbdf0383d8ca5fbafb18fc49b64f7172736914fdb4ee347ab9"
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "agree",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "agree"
+      }
+    },
+    {
+      "label": "08-incomplete-dispatch",
+      "hash": "0x11ec0b462f5814efcbf05aec060e1f855c3a7cbb4b4597eb8f332a64bd4084a3",
+      "method": "dispatch",
+      "signer": "0x8f2b08eDcE3609162D8914011C52E59363AbA1E1",
+      "args": [
+        "lamp-review",
+        "0x67de01a89b8bc0b1f77afc02edaf81dfd7749fad",
+        "Cedar reading lamp \u00b7 tag CL-204",
+        "[\"Shade\",\"Stem\",\"Base\"]",
+        "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: straight brass, no dents. Base: one pre-existing shallow scratch on the underside; stable on a flat surface."
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "agree",
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "idle"
+      }
+    },
+    {
+      "label": "09-incomplete-receive",
+      "hash": "0x5ea642950defe222fb3635a1be5cf47522e453352840c167d9fe61fce21e701d",
+      "method": "receive",
+      "signer": "0x67DE01a89b8bC0b1F77AFC02EDAf81DFd7749fad",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-review",
+        "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Base: the same shallow underside scratch; stable on a flat surface. The stem was not inspected."
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "idle",
+        "0xcab45E3fe9cC9592B5C378E47734E022b7Df80c9": "agree",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "agree"
+      }
+    },
+    {
+      "label": "10-incomplete-compare",
+      "hash": "0x523cb20bb78002cdb4814ab14f903bfc436392f40578a6eac2b8790943ac5ba1",
+      "method": "compare",
+      "signer": "0x67DE01a89b8bC0b1F77AFC02EDAf81DFd7749fad",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-review"
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "SUCCESS",
+      "votes": {
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "idle",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "idle",
+        "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "agree"
+      }
+    },
+    {
+      "label": "11-review-ack-denied",
+      "hash": "0xb456abd5934e8302369092c0db630600548d45fb9f499b102e8a79e096d048fe",
+      "method": "acknowledge",
+      "signer": "0x8f2b08eDcE3609162D8914011C52E59363AbA1E1",
+      "args": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "lamp-review",
+        "d929774fa0ab2239e02cb9b9e5f0aa983e73cb366e71dac6bce2a2947d7918c9"
+      ],
+      "status": 7,
+      "result": 6,
+      "execution_result": "ERROR",
+      "votes": {
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "agree",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "idle",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "idle"
+      }
+    }
+  ],
+  "records": [
+    {
+      "after": "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: brass with a new visible dent at the midpoint. Base: the same shallow underside scratch; stable on a flat surface.",
+      "approvals": [
+        "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+        "0x67de01a89b8bc0b1f77afc02edaf81dfd7749fad"
+      ],
+      "before": "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: straight brass, no dents. Base: one pre-existing shallow scratch on the underside; stable on a flat surface.",
+      "declined_by": "",
+      "digest": "170f583bdaa8a5fbdf0383d8ca5fbafb18fc49b64f7172736914fdb4ee347ab9",
+      "id": "lamp-204",
+      "item": "Cedar reading lamp \u00b7 tag CL-204",
+      "owner": "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+      "parts": [
+        "Shade",
+        "Stem",
+        "Base"
+      ],
+      "protocol": "stillmark-1",
+      "receiver": "0x67de01a89b8bc0b1f77afc02edaf81dfd7749fad",
+      "result": {
+        "findings": [
+          {
+            "after_quote": "Shade: cream linen, no tears or stains.",
+            "before_quote": "Shade: cream linen, no tears or stains.",
+            "label": "UNCHANGED",
+            "part": "Shade"
+          },
+          {
+            "after_quote": "Stem: brass with a new visible dent at the midpoint.",
+            "before_quote": "Stem: straight brass, no dents.",
+            "label": "NEW_DAMAGE",
+            "part": "Stem"
+          },
+          {
+            "after_quote": "Base: the same shallow underside scratch; stable on a flat surface.",
+            "before_quote": "Base: one pre-existing shallow scratch on the underside; stable on a flat surface.",
+            "label": "UNCHANGED",
+            "part": "Base"
+          }
+        ],
+        "identity": "SAME"
+      },
+      "status": "ACKNOWLEDGED"
+    },
+    {
+      "after": "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Base: the same shallow underside scratch; stable on a flat surface. The stem was not inspected.",
+      "approvals": [],
+      "before": "Cedar reading lamp, tag CL-204. Shade: cream linen, no tears or stains. Stem: straight brass, no dents. Base: one pre-existing shallow scratch on the underside; stable on a flat surface.",
+      "declined_by": "",
+      "digest": "d929774fa0ab2239e02cb9b9e5f0aa983e73cb366e71dac6bce2a2947d7918c9",
+      "id": "lamp-review",
+      "item": "Cedar reading lamp \u00b7 tag CL-204",
+      "owner": "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+      "parts": [
+        "Shade",
+        "Stem",
+        "Base"
+      ],
+      "protocol": "stillmark-1",
+      "receiver": "0x67de01a89b8bc0b1f77afc02edaf81dfd7749fad",
+      "result": {
+        "findings": [
+          {
+            "after_quote": "Shade: cream linen, no tears or stains.",
+            "before_quote": "Shade: cream linen, no tears or stains.",
+            "label": "UNCHANGED",
+            "part": "Shade"
+          },
+          {
+            "after_quote": "The stem was not inspected.",
+            "before_quote": "Stem: straight brass, no dents.",
+            "label": "UNCLEAR",
+            "part": "Stem"
+          },
+          {
+            "after_quote": "Base: the same shallow underside scratch; stable on a flat surface.",
+            "before_quote": "Base: one pre-existing shallow scratch on the underside; stable on a flat surface.",
+            "label": "UNCHANGED",
+            "part": "Base"
+          }
+        ],
+        "identity": "SAME"
+      },
+      "status": "REVIEW"
+    }
+  ]
+}

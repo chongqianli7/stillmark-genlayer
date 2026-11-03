@@ -1,0 +1,11 @@
+{
+  "protocol": "stillmark-1",
+  "network": 61999,
+  "sourceSha256": "bbf9a61b1abc4feed131e8b6092e5ad5bb4ffb3945f3f7cb32c25481fef2b3fa",
+  "owner": "0x8f2b08edce3609162d8914011c52e59363aba1e1",
+  "receiver": "0x67de01a89b8bc0b1f77afc02edaf81dfd7749fad",
+  "id": "lamp-204",
+  "fixture": "Authored lamp reports; two distinct zero-balance temporary test accounts controlled by one operator. Not independent people or a real physical inspection.",
+  "address": "0xc4b68c5c24a96Eca51FB43E981ccA27d88A50EcA",
+  "reviewId": "lamp-review"
+}
